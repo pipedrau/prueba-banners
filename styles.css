@@ -1,0 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(to bottom, #094675, #01b6e1);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.banner__content {
+    width: 60%;
+    padding: 0 10%;
+    z-index: 10;
+}
+
+.banner__title {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.banner__button {
+    margin-top: 25px;
+    padding: 12px 30px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 30px;
+    color: #094675;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.banner__button:hover {
+    background-color: white;
+    transform: scale(1.05);
+}
+
+.banner__image {
+    position: absolute;
+    right: 5%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.circle-animation-large {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    background-color: #083e67;
+    border-radius: 50%;
+    z-index: 0;
+    animation: circleAppearLarge 2s cubic-bezier(0.66, 0, 0.34, 1) forwards;
+    transform: scale(0);
+    opacity: 0;
+    right: calc(5% + 40px);
+    top: 50%;
+    transform-origin: center;
+    margin-top: -240px;
+}
+
+.circle-animation {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-color: #002663;
+    border-radius: 50%;
+    z-index: 0;
+    animation: circleAppear 2s cubic-bezier(0.66, 0, 0.34, 1) 0.5s forwards;
+    transform: scale(0);
+    opacity: 0;
+    right: calc(5% + 40px);
+    top: 50%;
+    transform-origin: center;
+    margin-top: -200px;
+}
+
+@keyframes circleAppearLarge {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes circleAppear {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.banner__image img {
+    height: 150%;
+    object-fit: cover;
+    object-position: top;
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+    .banner__title {
+        font-size: 3rem;
+    }
+    
+    .circle-animation-large {
+        width: 420px;
+        height: 420px;
+        margin-top: -210px;
+        right: calc(5% + 35px);
+    }
+    
+    .circle-animation {
+        width: 350px;
+        height: 350px;
+        margin-top: -175px;
+        right: calc(5% + 35px);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .banner__content {
+        width: 55%;
+        padding: 0 7%;
+    }
+    
+    .banner__title {
+        font-size: 2.5rem;
+    }
+    
+    .circle-animation-large {
+        width: 360px;
+        height: 360px;
+        margin-top: -180px;
+        right: calc(5% + 30px);
+    }
+    
+    .circle-animation {
+        width: 300px;
+        height: 300px;
+        margin-top: -150px;
+        right: calc(5% + 30px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .banner {
+        height: 450px;
+        flex-direction: column;
+    }
+    
+    .banner__content {
+        width: 100%;
+        padding: 5% 15%;
+        margin-top: 15px;
+        text-align: center;
+    }
+    
+    .banner__title {
+        font-size: 2.2rem;
+        white-space: normal;
+    }
+    
+    .banner__title br {
+        display: inline;
+    }
+    
+    .banner__button {
+        margin: 15px auto 0;
+        display: block;
+        position: relative;
+        z-index: 15;
+    }
+    
+    .banner__image {
+        position: relative;
+        width: 100%;
+        height: 60%;
+        margin-top: 10px;
+        overflow: visible;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    .circle-animation-large {
+        width: 336px;
+        height: 336px;
+        top: 55%;
+        right: auto;
+        left: 50%;
+        margin-top: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    
+    .circle-animation {
+        width: 280px;
+        height: 280px;
+        top: 55%;
+        right: auto;
+        left: 50%;
+        margin-top: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    
+    @keyframes circleAppearLarge {
+        0% {
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+        }
+        100% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes circleAppear {
+        0% {
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+        }
+        100% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+    }
+    
+    .banner__image img {
+        width: auto;
+        height: 200%;
+        object-position: top center;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .banner {
+        height: 500px;
+        position: relative;
+        padding-bottom: 30px;
+    }
+    
+    .banner__title {
+        font-size: 1.8rem;
+    }
+    
+    .banner__content {
+        padding: 4% 8%;
+    }
+    
+    .banner__button {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 20;
+    }
+    
+    .banner__image {
+        height: 55%;
+        overflow: visible;
+        position: absolute;
+        bottom: 50px;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+    }
+    
+    .circle-animation-large {
+        width: 300px;
+        height: 300px;
+        top: 40%;
+    }
+    
+    .circle-animation {
+        width: 250px;
+        height: 250px;
+        top: 40%;
+    }
+    
+    .banner__image img {
+        height: 300%;
+        object-position: top center;
+        margin: 0 auto;
+    }
+} 
