@@ -10,6 +10,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header class="header">
+        <div class="container">
+            <div class="header__logo">
+                <a href="#" class="logo">HONDUBET</a>
+            </div>
+            <nav class="header__nav">
+                <ul class="nav__menu">
+                    <li class="nav__item"><a href="#" class="nav__link">Casino</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Deportes</a></li>
+                </ul>
+            </nav>
+            <div class="header__hamburger">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </div>
+        </div>
+    </header>
+
     <div class="banner">
         <div class="banner__content">
             <h1 class="banner__title">
@@ -25,5 +44,12 @@
             <img src="personaje.png" alt="Personaje Hondubet">
         </div>
     </div>
+
+    <script>
+        document.querySelector('.header__hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.header__nav').classList.toggle('active');
+        });
+    </script>
 </body>
 </html> 
