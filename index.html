@@ -3,52 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banner Hondubet</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Hondubet - Banners</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'verde-botones': '#95FB3F',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="font-poppins">
+    <!-- Animación de gradiente de fondo -->
+    <div class="background-gradient-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="gradient-orb orb-4"></div>
+        <div class="gradient-orb orb-5"></div>
+    </div>
+    
     <header class="header">
-        <div class="container">
-            <div class="header__logo">
-                <a href="#" class="logo">HONDUBET</a>
+        <!-- Navegación - ocupa todo el ancho -->
+        <nav class="text-white py-4 w-full">
+            <!-- Contenido del nav limitado a 1240px y centrado -->
+            <div class="max-w-[1240px] mx-auto flex justify-between items-center px-5 md:px-[20px]">
+                <img src="LOGO HONDUBET.png" alt="Logo Hondubet" class="h-6">
+                <div class="flex space-x-6 nav-menu">
+                    <a href="#" class="hover:text-verde-botones">Inicio</a>
+                    <a href="#" class="hover:text-verde-botones">Deportes</a>
+                    <a href="#" class="hover:text-verde-botones">Casino</a>
+                    <a href="#" class="hover:text-verde-botones">Promociones</a>
+                    <a href="#" class="hover:text-verde-botones">Contacto</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-            <nav class="header__nav">
-                <ul class="nav__menu">
-                    <li class="nav__item"><a href="#" class="nav__link">Casino</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Deportes</a></li>
-                </ul>
-            </nav>
-            <div class="header__hamburger">
-                <span class="hamburger__line"></span>
-                <span class="hamburger__line"></span>
-                <span class="hamburger__line"></span>
-            </div>
-        </div>
+        </nav>
     </header>
 
-    <div class="banner">
-        <div class="banner__content">
-            <h1 class="banner__title">
-                Jugá, apostá y ganá<br>
-                como un verdadero<br>
-                catracho en hondubet
-            </h1>
-            <button class="banner__button">Jugá aquí</button>
-        </div>
-        <div class="circle-animation-large"></div>
-        <div class="circle-animation"></div>
-        <div class="banner__image">
-            <img src="personaje.png" alt="Personaje Hondubet">
-        </div>
+    <!-- Contenido principal -->
+    <div class="max-w-[1240px] mx-auto">
+        <main class="py-10 px-5 md:px-[20px]">
+            <div class="gradient-title title-adjusted">
+                <h1>Entorno de prueba - Banner</h1>
+            </div>
+
+            <section class="container mx-auto py-8 flex flex-col gap-8">
+                <!-- Contenedor de banners - solo uno visible a la vez -->
+                <div class="banner-container">
+                    <article class="banner-article active" id="banner1" style="background: linear-gradient(90deg, #0a4875 0%, #01b6e1 100%);">
+                        <div class="banner-text-content">
+                            <h2 class="banner-text">
+                                <span>Jugá, apostá y ganá</span>
+                                <span>como un verdadero</span>
+                                <span>catracho en <strong>Hondubet</strong></span>
+                            </h2>
+                            <button class="banner-button">Jugá Aquí</button>
+                        </div>
+                        <div class="banner-character">
+                            <img src="character.png" alt="Personaje Hondubet">
+                        </div>
+                    </article>
+
+                    <article class="banner-article" id="banner2" style="background-image: url('banner02.png'); background-size: cover;">
+                        <div class="banner-text-content">
+                            <h2 class="banner-text">
+                                <span>Jugá, apostá y ganá</span>
+                                <span>como un verdadero</span>
+                                <span>catracho en <strong>Hondubet</strong></span>
+                            </h2>
+                            <button class="banner-button">Jugá Aquí</button>
+                        </div>
+                        <div class="banner-character hidden">
+                            <img src="character.png" alt="Personaje Hondubet">
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Botones de selección de banner -->
+                <div class="banner-selector flex justify-center gap-4 mt-6">
+                    <button class="banner-tag active" data-banner="banner1">Banner 1</button>
+                    <button class="banner-tag" data-banner="banner2">Banner 2</button>
+                </div>
+            </section>
+        </main>
     </div>
 
     <script>
-        document.querySelector('.header__hamburger').addEventListener('click', function() {
-            this.classList.toggle('active');
-            document.querySelector('.header__nav').classList.toggle('active');
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+            
+            // Cerrar el menú al hacer clic en un enlace
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // Funcionalidad para cambiar entre banners
+            const bannerTags = document.querySelectorAll('.banner-tag');
+            const banners = document.querySelectorAll('.banner-article');
+
+            bannerTags.forEach(tag => {
+                tag.addEventListener('click', () => {
+                    // Obtener el ID del banner a mostrar
+                    const bannerId = tag.getAttribute('data-banner');
+                    
+                    // Ocultar todos los banners y desactivar todos los tags
+                    banners.forEach(banner => banner.classList.remove('active'));
+                    bannerTags.forEach(tag => tag.classList.remove('active'));
+                    
+                    // Mostrar el banner seleccionado y activar el tag correspondiente
+                    document.getElementById(bannerId).classList.add('active');
+                    tag.classList.add('active');
+                });
+            });
         });
     </script>
 </body>
