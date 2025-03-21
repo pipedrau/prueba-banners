@@ -726,8 +726,8 @@ p.text-\[32px\] {
 
 @media (max-width: 768px) {
     article div {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
     }
     
     .text-\[36px\] {
@@ -854,8 +854,8 @@ p.text-\[32px\] {
 
 @media (max-width: 768px) {
     .banner-text-content {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
         max-width: 70%;
     }
     
@@ -873,12 +873,14 @@ p.text-\[32px\] {
 }
 
 @media (max-width: 600px) {
-    .banner-text {
-        font-size: 20px;
+    .banner-text-content {
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 75%;
     }
     
-    .banner-text-content {
-        max-width: 75%;
+    .banner-text {
+        font-size: 20px;
     }
     
     .banner-character {
@@ -887,12 +889,14 @@ p.text-\[32px\] {
 }
 
 @media (max-width: 480px) {
-    .banner-text {
-        font-size: 18px;
+    .banner-text-content {
+        padding-left: 5px;
+        padding-right: 5px;
+        max-width: 85%;
     }
     
-    .banner-text-content {
-        max-width: 80%;
+    .banner-text {
+        font-size: 18px;
     }
     
     .banner-character {
@@ -1064,8 +1068,8 @@ p.text-\[32px\] {
 
 @media (max-width: 768px) {
     .banner-text-content {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
         max-width: 70%;
     }
     
@@ -1083,12 +1087,14 @@ p.text-\[32px\] {
 }
 
 @media (max-width: 600px) {
-    .banner-text {
-        font-size: 20px;
+    .banner-text-content {
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 75%;
     }
     
-    .banner-text-content {
-        max-width: 75%;
+    .banner-text {
+        font-size: 20px;
     }
     
     .banner-character {
@@ -1097,12 +1103,14 @@ p.text-\[32px\] {
 }
 
 @media (max-width: 480px) {
-    .banner-text {
-        font-size: 18px;
+    .banner-text-content {
+        padding-left: 5px;
+        padding-right: 5px;
+        max-width: 85%;
     }
     
-    .banner-text-content {
-        max-width: 80%;
+    .banner-text {
+        font-size: 18px;
     }
     
     .banner-character {
